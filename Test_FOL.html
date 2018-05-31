@@ -1,0 +1,511 @@
+<html>
+<head>
+<title>Corrección de un test</title>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+function timeout(){
+  setTimeout(function(){
+      document.getElementById("testdiv").innerHTML="Pasaron 2 segundos antes de que pudieras ver esto.";
+  },2000,"JavaScript");
+}
+</script>
+<!-- <script language="JavaScript">
+var count = 1200;
+function countdown(){
+    var minutos = document.getElementById('cont');
+    var segundos = document.getElementById('seg');
+    setInterval(function(){
+        if(count>0){
+            count = parseInt(count)-1;
+            var min = parseInt(count/60);
+            var seg = count%60;
+
+            minutos.innerHTML = min;
+            segundos.innerHTML = seg;
+        }else{
+            document.location.target = "_blank";
+            document.location.href="?tiempo="+count+"&puntuacio="+total;
+        }
+    }, 1000);
+}
+function corregir(){
+var p1
+var p2
+var p3
+
+var aciertos = 0
+var fallos = 0
+var blancos = 0
+var nota
+var notaFinal
+if(isset($_POST['terminar']))
+{
+    r1 = _POST['P1D'];
+    r2 = _POST['P2B'];
+    r3 = _POST['P3C'];
+    r4 = _POST['P4D'];
+    r5 = _POST['P5D'];
+    r6 = _POST['P6D'];
+    r7 = _POST['P7D'];
+    r8 = _POST['P8C'];
+    r9 = _POST['P9C'];
+    r10 = _POST['P10A'];
+    r11 = _POST['P11C'];
+    r12 = _POST['P12B'];
+    r13 = _POST['P13C'];
+    r14 = _POST['P14C'];
+    r15 = _POST['P15C'];
+    r16 = _POST['P16A'];
+    r17 = _POST['P17D'];
+    r18 = _POST['P18A'];
+    r19 = _POST['P19B'];
+    r20 = _POST['P20B'];
+
+    resultado = r1+r2+r3+r4+r5+r6+r7+r8+r9+r10+r11+r12+r13+r14+r15+r16+r17+r18+r19+r20;
+    if(resultado <= 9){echo "Has suspendido el examen (".resultado."/10)";}
+    if (resultado==10){echo "Has aprobado el examen! (".resultado."/10)";}
+  <script language="javascript">alert(resultado);</script>;
+   alert("Tu resultado es resultado");
+}
+<! 1 pregunta->
+
+if (document.getElementById('p1A').checked==false) {
+     fallos++;
+}else if (document.getElementById('p1B').checked==false){
+         fallos++;
+}else if (document.getElementById('p1C').checked==false){
+        fallos++;
+}else if (document.getElementById('p1D').checked==true){
+        aciertos++;
+}else{
+      blancos++;
+      }
+
+aciertos = aciertos*0.5;
+fallos = fallos*0.5;
+blancos = blancos*0.1;
+nota = aciertos-fallos-blancos;
+if(nota<0){
+puntuacion = 0;
+}else{
+puntuacion = nota;
+}
+
+
+
+[COLOR="Red"]document.resultado.getElementById('aciertos').value = aciertos;
+document.resultado.getElementById('fallos').value = fallos;
+document.resultado.getElementById('blancos').value = blancos;
+document.resultado.getElementById('puntuacion').value = puntuacion;[/COLOR]
+
+}
+</script> -->
+<script type="text/javascript" >
+toHour=1;
+toMinute=20;
+toSecond=0;
+function countDown()
+{
+	toSecond=toSecond-1;
+	if(toSecond<0)
+	{
+		toSecond=59;
+		toMinute=toMinute-1;
+	}
+	form.second.value=toSecond;
+
+	if(toMinute<0)
+	{
+    form.second.value=0;
+		form.minute.value=0;
+	}
+	form.minute.value=toMinute;
+
+
+	if(toHour<0)
+	{
+		//final
+		form.second.value=0;
+		form.minute.value=0;
+		form.hour.value=0;
+	}else{
+		setTimeout("countDown()",1000);
+	}
+}
+
+</script>
+</head>
+<body onload="countDown();">
+  <h1>TEST</h1>
+  <br>
+  <div class="h1">
+
+    <form name="form">
+	Tiempo restante...:
+	<input type="text" size="5" class="form_input" name="minute" disabled>:
+	<input type="text" size="5" class="form_input" name="second" disabled>
+</form>
+  </div>
+  </div>
+  <br>
+  <div class="divPrincipal">
+
+
+<form name="preguntas" method="POST" action="corrección.php">
+  <div class="preguntas">
+<p><!-- Primera pregunta -->
+    1.-La evaluación de los riesgos laborales la realizará:  </p>
+<p>
+    <input type="radio" name="pregunta1" id="p1A" value="A">a)	El Empresario </p>
+<p>
+    <input type="radio" name="pregunta1" id="p1B" value="B">b)	Los Trabajadores  </p>
+<p>
+    <input type="radio" name="pregunta1" id="p1C" value="C">c)	Personal Técnico Especializado  </p>
+<p>
+    <input type="radio" name="resPregunta1" id="p1D" value="D">d)	La Administración  </p>
+<p> </p>
+
+</div>
+<!-- Segunda pregunta -->
+<br>
+<div class="preguntas">
+
+2.-	Juan trabaja en una cadena de montaje de coches. Tras oír un ruido raro presiente que algo ha fallado en la
+ maquinaria y teme sufrir un accidente ¿Podrá abandonar su puesto de trabajo?
+<p>
+    <input type="radio" name="pregunta2" id="p2A" value="A">a)	Si, en cualquier caso  </p>
+<p>
+    <input type="radio" name="pregunta2" id="p2B" value="B">b)	Si, cuando considere que dicha actividad entraña un riesgo grave e inminente para su vida o su salud   </p>
+<p>
+    <input type="radio" name="pregunta2" id="p2C" value="C">c)	No, deberá informar al superior  </p>
+<p>
+    <input type="radio" name="pregunta2" id="p2D" value="D">d)	No, solo lo podrá hacer si así le autoriza el empresario </p>
+<p>
+  </div>
+  <br>
+  <div class="preguntas">
+<!-- Tercera pregunta -->
+3.-	Posibilidad de que un trabajador sufra un determinado daño derivado del trabajo
+<br>
+<p>
+    <input type="radio" name="pregunta3" id="p3A" value="A">a)	Enfermedad profesional  </p>
+<p>
+    <input type="radio" name="pregunta3" id="p3B" value="B">b)	Accidente de trabajo </p>
+<p>
+    <input type="radio" name="pregunta3" id="p3C" value="C">c)	Riesgo laboral   </p>
+<p>
+    <input type="radio" name="pregunta3" id="p3D" value="D">d)	Accidente personal  </p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 4 pregunta -->
+4.-	¿Cuál de los siguientes NO es un derecho básico de los trabajadores?
+<br>
+<p>
+    <input type="radio" name="pregunta4" id="p4A" value="A">a)	Una protección eficaz en materia de seguridad y salud en el trabajob)	Recibir información acerca de los riesgos existentes, las medidas y actividades de   </p>
+<p>
+    <input type="radio" name="pregunta4" id="p4B" value="B">b)	Recibir información acerca de los riesgos existentes, las medidas y actividades de  </p>
+<p>
+    <input type="radio" name="pregunta4" id="p4C" value="C">c)	Una indemnización por exponerse a los riesgos </p>
+<p>
+    <input type="radio" name="pregunta4" id="p4D" value="D">d)	Recibir desayunos de 9:00 a 11:00 am </p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 5 pregunta -->
+5.-	Para el cálculo de la retribución de un trabajador en incapacidad temporal por enfermedad común se tendrá en cuenta
+<br>
+<p>
+    <input type="radio" name="pregunta5" id="p5A" value="A">a)	La base de cotización sujeta al IRPF  </p>
+<p>
+    <input type="radio" name="pregunta5" id="p5B" value="B">b)	La base de cotización por contingencias profesionales </p>
+<p>
+    <input type="radio" name="pregunta5" id="p5C" value="C">c)	La base de cotización por contingencias profesionales  y conceptos de recaudación conjunta   </p>
+<p>
+    <input type="radio" name="pregunta5" id="p5D" value="D">d)	La base de cotización por contingencias comunes  </p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 6 pregunta -->
+6.-Si pasa un accidente y lo veo estoy forzado brindar ayuda:
+<br>
+<p>
+    <input type="radio" name="pregunta6" id="p6A" value="A">a)	Si, es mi obligacion </p>
+<p>
+    <input type="radio" name="pregunta6" id="p6B" value="B">b)	No, nunca </p>
+<p>
+    <input type="radio" name="pregunta6" id="p6C" value="C">c)	Solo si me apetece  </p>
+<p>
+    <input type="radio" name="pregunta6" id="p6D" value="D">d)	Si, aunque sea solo avisar a las autoridades   </p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 7 pregunta -->
+7.-	¿Qué es el Plan PRL?
+<br>
+<p>
+    <input type="radio" name="pregunta7" id="p7A" value="A">a)	Plan Para Recibir Lino </p>
+<p>
+    <input type="radio" name="pregunta7" id="p7B" value="B">b)	Plan Plaza Rio Luna </p>
+<p>
+    <input type="radio" name="pregunta7" id="p7C" value="C">c)	Plan Prevención de Riego Laboral</p>
+<p>
+    <input type="radio" name="pregunta7" id="p7D" value="D">d)	Plan Prevención de Riesgos Laborales</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 8 pregunta -->
+8.-¿ Cuál de los siguientes pasos corresponden a la elaboración de un Pal de Emergencia básico?
+<br>
+1.Evaluar altura de empleados<br>
+2.Analizar amenazas y riesgos.<br>
+3.Preguntar el tipo de sangre de los empleados<br>
+4.Evaluar recursos <br>
+5.Difusión y evaluación<br>
+6.Diseño de Plan de Emergencia <br>
+<p>
+    <input type="radio" name="pregunta8" id="p8A" value="A">a)  1,2,3	  </p>
+<p>
+    <input type="radio" name="pregunta8" id="p8B" value="B">b)	1,3,6 </p>
+<p>
+    <input type="radio" name="pregunta8" id="p8C" value="C">c)	2,4,6</p>
+<p>
+    <input type="radio" name="pregunta8" id="p8D" value="D">d)  1,3,4	</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 9 pregunta -->
+9.-	¿Qué hacer en caso de accidente?
+<br>
+<p>
+    <input type="radio" name="pregunta9" id="p9A" value="A">a)	Llorar</p>
+<p>
+    <input type="radio" name="pregunta9" id="p9B" value="B">b)	Gritarle y culpar al otro</p>
+<p>
+    <input type="radio" name="pregunta9" id="p9C" value="C">c)	Hacer fotos del estado de nuestro vehículo y del suyo</p>
+<p>
+    <input type="radio" name="pregunta9" id="p9D" value="D">d)	Rellenar una encuesta</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 10 pregunta -->
+10.- Según la OMS la salud se define como:
+<br>
+<p>
+    <input type="radio" name="pregunta10" id="p10A" value="A">a)	Estado completo de bienestar físico, psíquico y social </p>
+<p>
+    <input type="radio" name="pregunta10" id="p10B" value="B">b)	Estado completo de bienestar psíquico y no  social </p>
+<p>
+    <input type="radio" name="pregunta10" id="p10C" value="C">c)	Estado completo de bienestar físico unicamente  </p>
+<p>
+    <input type="radio" name="pregunta10" id="p10D" value="D">d)	Estado completo de tristeza </p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 11 pregunta -->
+11.-	Juan ha terminado la jornada laboral en su empresa. Al salir coge su vehículo y se dirige a casa. Cuando está a punto de llegar un coche se
+salta un ceda el paso y le produce una pequeña lesión que lo mantiene de baja durante dos semanas ¿ Cómo se calificará dicho accidente?
+<br>
+<p>
+    <input type="radio" name="pregunta11" id="p11A" value="A">a)	Se considera un accidente no laboral, ya que había acabado su jornada laboral</p>
+<p>
+    <input type="radio" name="pregunta11" id="p11B" value="B">b)	Se considera un accidente no laboral in itinere</p>
+<p>
+    <input type="radio" name="pregunta11" id="p11C" value="C">c)	Se considera un accidente laboral in itinere</p>
+<p>
+    <input type="radio" name="pregunta11" id="p11D" value="D">d)	Se considera un accidente no laboral, pero podrá pedirse la incapacidad temporal</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 12 pregunta -->
+12.-	En la incapacidad permanente total, el trabajador:
+<p>
+    <input type="radio" name="pregunta12" id="p12A" value="A">a)	Está inhabilitado para cualquier tipo de profesión u oficio</p>
+<p>
+    <input type="radio" name="pregunta12" id="p12B" value="B">b)	Está inhabilitado para la realización de las tareas propias de su profesión  </p>
+<p>
+    <input type="radio" name="pregunta12" id="p12C" value="C">c)	Está inhabilitado para la realización de las tareas propias de su profesión y,
+     además , requiere ayuda de terceros para las funciones más básicas</p>
+<p>
+    <input type="radio" name="pregunta12" id="p12D" value="D">d)	Tiene una disminución de la capacidad funcional inferior al 33%</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 13 pregunta -->
+13.- El órgano de la Seguridad Social donde se formalizan las altas y bajas de trabajadores es :
+<br>
+<p>
+    <input type="radio" name="pregunta13" id="p13A" value="A">a)	La Secretaria de Estado de la Seguridad Social</p>
+<p>
+    <input type="radio" name="pregunta13" id="p13B" value="B">b)	El instituto Nacional de la Seguridad Social </p>
+<p>
+    <input type="radio" name="pregunta13" id="p13C" value="C">c)	LA Tesorería General de la Seguridad Social </p>
+<p>
+    <input type="radio" name="pregunta13" id="p13D" value="D">d)	El Instituto Nacional de la Tesorería Social</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 14 pregunta -->
+14.- En la materia de primeros auxilios entendemos por las siglas PAS:
+<br>
+<p>
+    <input type="radio" name="pregunta14" id="p14A" value="A">a)	Proporcionar ayuda solvente</p>
+<p>
+    <input type="radio" name="pregunta14" id="p14B" value="B">b)	Proteger, ayudar, socorrer </p>
+<p>
+    <input type="radio" name="pregunta14" id="p14C" value="C">c)	Proteger, avisar, </p>
+<p>
+    <input type="radio" name="pregunta14" id="p14D" value="D">d)	Proporcionar aviso de socorro</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 15 pregunta -->
+15.-	La existencia de un botiquín en las empresas:
+<br>
+<p>
+    <input type="radio" name="pregunta15" id="p15A" value="A">a)	Es recomendación pero no una obligación </p>
+<p>
+    <input type="radio" name="pregunta15" id="p15B" value="B">b)	Es una práctica que viene recogida en los idearios de las empresas p>
+<p>
+    <input type="radio" name="pregunta15" id="p15C" value="C">c)	Es una obligación recogida por Real Decreto</p>
+<p>
+    <input type="radio" name="pregunta15" id="p15D" value="D">d)	Solo lo tienen las empresas de actividades peligrosas</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 16 pregunta -->
+16.- ¿Qué es la fatiga laboral?
+<br>
+<p>
+    <input type="radio" name="pregunta16" id="p16A" value="A">a)	Tiempos Modernos</p>
+<p>
+    <input type="radio" name="pregunta16" id="p16B" value="B">b)	Manifestacion de tensión causando disminución de respuesta del organismo</p>
+<p>
+    <input type="radio" name="pregunta16" id="p16C" value="C">c)	Manifestacion de felicidad causando disminución de respuesta del organismo</p>
+<p>
+    <input type="radio" name="pregunta16" id="p16D" value="D">d)	Manifestacion de alergias causando contagios</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 17 pregunta -->
+17.-	La prevención de riesgos laborales va a recaer fundamentalmente  en :
+<br>
+<p>
+    <input type="radio" name="pregunta17" id="p17A" value="A">a)	Los empresarios</p>
+<p>
+    <input type="radio" name="pregunta17" id="p17B" value="B">b)	Los trabajadores </p>
+<p>
+    <input type="radio" name="pregunta17" id="p17C" value="C">c)	Las administraciones</p>
+<p>
+    <input type="radio" name="pregunta17" id="p17D" value="D">d)	Todos los anteriores de manera conjunta</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 18 pregunta -->
+18.- La elaboración , implantación y aplicación del plan de prevención de riesgos laborales corresponde a:
+<br>
+<p>
+    <input type="radio" name="pregunta18" id="p18A" value="A">a)	El empresario</p>
+<p>
+    <input type="radio" name="pregunta18" id="p18B" value="B">b)	El trabajador</p>
+<p>
+    <input type="radio" name="pregunta18" id="p18C" value="C">c)	El ministerio de Trabajo </p>
+<p>
+    <input type="radio" name="pregunta18" id="p18D" value="D">d)	La Consejería de Trabajo y Salud Laboral</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+
+<!-- 19 pregunta -->
+19.-	La evacuación del centro de trabajo se realiza cuando:
+<br>
+<p>
+    <input type="radio" name="pregunta19" id="p19A" value="A">a)	Se ve humo en el centro de trabajo </p>
+<p>
+    <input type="radio" name="pregunta19" id="p19B" value="B">b)	Todas las etapas de protección, detención y extinción del fuego han fallado y existe riesgo para la vida de las personas </p>
+<p>
+    <input type="radio" name="pregunta19" id="p19C" value="C">c)	Cuando los sprinklers comienzan a funcionar</p>
+<p>
+    <input type="radio" name="pregunta19" id="p19D" value="D">d)	Cuando se ha llamado a los bomberos</p>
+<p> </p>
+
+</div>
+<br>
+<div class="preguntas">
+<!-- 20 pregunta -->
+20.- La finalidad de los primeros auxilios es:
+<br>
+<p>
+    <input type="radio" name="pregunta20" id="p20A" value="A">a)	Curar las heridas más graves del accidentado</p>
+<p>
+    <input type="radio" name="pregunta20" id="p20B" value="B">b)	Evitar que el accidentado empeore su estado, aliviar el dolor y facilitar la evacuación</p>
+<p>
+    <input type="radio" name="pregunta20" id="p20C" value="C">c)	Dar al herido alguna pastilla para evitar el dolor</p>
+<p>
+    <input type="radio" name="pregunta20" id="p20D" value="D">d)	Despegar rápidamente las ropas quemadas de la piel para evitar infección </p>
+<p> </p>
+
+</div>
+</form>
+<!-- <form name="boton"> -->
+	<!-- </form> -->
+<br><br>
+
+<form name="resultado" action="">
+  </div>
+  <div class="divCorr">
+
+
+  <!-- <input type="button"  name="boton" value=" CORREGIR " onclick="corregir()"/> -->
+  <input type="submit" value="Enviar"  style="background-color:#0B5795; font:bold 10px verdana; color:#FFF;" />
+
+Has acertado <br>
+ <input size="3" id="aciertos" > preguntas <br>
+Has fallado en <input size="3" id="fallos"> preguntas <br>
+Has dejado de responder <input size="3" id="blancos"> preguntas
+<p>
+PUNTUACIÓN: <input size="5" type="text" id="puntuacion" />  puntos
+</form></p>
+  </div>
+</body>
+</html>
